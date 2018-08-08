@@ -16,19 +16,29 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col">
-                <nav id="first" class="navbar">
-                    <button class="btn buttons"> &#xf181; Tableros</button>
-                    <form>
-                        <input type="text" id="input" placeholder="&#xF002;" />
-                    </form>
+                <nav class="first">
+                    <ul class="nav nav-pills">
+                        <li class="btn buttons">&#xf181; Tableros</li>
+                        <form class="navbar-form">
+                            <input class="input" type="text" placeholder="&#xF002;" />
+                        </form>
+                        <img class="logo" src="src/img/trello-logo-white.svg" alt="">
+                        <li class="btn buttons ml-auto">&#xf067;</li>
+                        <li class="btn buttons rigth">&#xf05a;</li>
+                        <li class="btn buttons rigth">&#xf0f3;</li>
+                        <img src="src/img/person.jpeg" class="rounded-circle photo rigth" alt="">
+                    </ul>
                 </nav>
-                <nav id="second" class="navbar navbar-expand-lg nav">
-                    <button class="btn buttons trello-title">Nombre Trello</button>
-                    <button class="btn buttons">&#xf005;</button>|
-                    <button class="btn buttons">Personal</button>|
-                    <button class="btn buttons">&#xf0ac; Público</button>|
-                    <img src="src/img/person.jpeg" class="rounded-circle" alt="">
-                    <button class="btn icon rounded-circle">&#xf234;</button>
+                <nav class="second">
+                    <ul class="nav nav-pills">
+                        <li class="btn buttons trello-title">Nombre Trello</li>
+                        <li class="btn buttons">&#xf005;</li>|
+                        <li class="btn buttons">Personal</li>|
+                        <li class="btn buttons">&#xf0ac; Público</li>|
+                        <img src="src/img/person.jpeg" class="rounded-circle photo" alt="">
+                        <li class="btn icon rounded-circle">&#xf234;</li>
+                        <a class="btn buttons ml-auto" href="">... Mostrar Menú</a>
+                    </ul>
                 </nav>
             </div>
         </div>
