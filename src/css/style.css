@@ -38,15 +38,16 @@ body {
     border: none;
     float: left;
     margin: 3px;
+    padding-right: 10px;
     font-size: 13px;
     height: 32px;
     min-height: 32px;
-    padding-right: 32px;
-    padding-left: 8px;
     line-height: 19px;
     transition: width .15s;
     width: 180px;
     z-index: 1;
+    color: white;
+    text-align: right;
 }
 
 .logo {
@@ -70,7 +71,7 @@ body {
 
 .photo {
     height: 29px;
-    margin: 3px;
+    margin: 4px;
 }
 
 .photo:hover {
@@ -97,7 +98,7 @@ body {
 }
 
 .first .buttons:hover {
-    background: rgba(0, 0, 0, .15);
+    background-color: hsla(0, 0%, 100%, .6);
 }
 
 .second {
@@ -112,8 +113,8 @@ body {
     height: 30px;
     width: 30px;
     font-size: 15px;
-    padding: 5px 0px 0px 1px;
-    margin: 3px;
+    padding: 5px 0px 0px 0px;
+    margin: 4px;
 }
 
 .second .icon:hover {
@@ -123,9 +124,31 @@ body {
 .second .buttons {
     background: none;
     color: white;
-    float: left;
 }
 
 .second .buttons:hover {
     background-color: rgba(0, 0, 0, .15);
+}
+
+
+/* Content */
+
+.content .main {
+    color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(0, 0, 0, .15);
+    height: 35px;
+    width: 100%;
+    margin: 3px;
+    text-align: left;
+}
+
+.content .main:hover {
+    background-color: rgba(0, 0, 0, .30);
+}
+
+.list {
+    width: 200px;
+    height: 100%;
+    display: block;
+    float: left;
 }
