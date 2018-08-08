@@ -44,39 +44,16 @@
                     <div class="row">
                         <div class="col">
                             <div class="list">
-                                <ul class="nav nav-pills">
-                                    <li class="btn main"> + Añada una lista</li>
-                                </ul>
-                            </div>
-                            <div class="list">
-                                <ul class="nav nav-pills">
-                                    <li class="btn main"> + Añada una lista</li>
-                                </ul>
-                            </div>
-                            <div class="list">
-                                <ul class="nav nav-pills">
-                                    <li class="btn main"> + Añada una lista</li>
-                                </ul>
-                            </div>
-                            <div class="list">
-                                <ul class="nav nav-pills">
-                                    <li class="btn main"> + Añada una lista</li>
-                                </ul>
-                            </div>
-                            <div class="list">
-                                <ul class="nav nav-pills">
-                                    <li class="btn main"> + Añada una lista</li>
-                                </ul>
-                            </div>
-                            <div class="list">
-                                <ul class="nav nav-pills">
-                                    <li class="btn main"> + Añada una lista</li>
-                                </ul>
-                            </div>
-                            <div class="list">
-                                <ul class="nav nav-pills">
-                                    <li class="btn main"> + Añada una lista</li>
-                                </ul>
+                                <div id="list-button">
+                                    <ul class="nav nav-pills">
+                                        <li onclick="newlist()" class="btn main"> + Añada una lista</li>
+                                    </ul>
+                                </div>
+                                <div id="list-form" class="list-form hide">
+                                    <input id="title" class="form-control" type="search" placeholder=" Introduzca el título de la lista...">
+                                    <button id="newlist" class="btn btn-success" onclick="addlist()">Añadir lista</button>
+                                    <li class="btn close ml-0">&#xf00d;</li>
+                                </div>
                             </div>
                         </div>
                     </div>

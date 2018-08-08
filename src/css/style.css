@@ -82,6 +82,10 @@ body {
     margin-right: 2px;
 }
 
+.hide {
+    display: none;
+}
+
 
 /* Custom Navbars*/
 
@@ -147,8 +151,22 @@ body {
 }
 
 .list {
-    width: 200px;
+    width: 250px;
     height: 100%;
     display: block;
+    position: fixed;
     float: left;
+    font-size: 12px;
+}
+
+.list-form {
+    background-color: gainsboro;
+    margin: 3px;
+    padding: 3px;
+    border-radius: 3px;
+    border: none;
+}
+
+.list-form .btn {
+    margin: 3px;
 }
