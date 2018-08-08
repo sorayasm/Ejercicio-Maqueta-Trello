@@ -20,11 +20,22 @@ function addlist() {
         <p><h1>` + input + `</h1></p>
             <div id="card-button">
                 <ul class="nav nav-pills">
-                    <li onclick="newcard()" class="btn buttons main"> + Añada una tarjeta</li>
+                    <li onclick="newcardinput()" class="btn buttons main"> + Añada una tarjeta</li>
                 </ul>
             </div>
+            <div id="newcarddisplay"></div>
         </div>
         `;
         newlistdisplay.appendChild(div);
     }
+}
+
+function newcardinput() {
+    document.getElementById("card-button").classList.add("hide"); //hide card button
+    const div = document.createElement("newcardisplay");
+    div.innerHTML = `
+    <textarea  id="card" class="form-control" rows="3" placeholder="Introduzca el contenido de la tarjeta..""></textarea>
+    <button id="newlist" class="btn btn-success" onclick="addcard()">Añadir</button>
+    <li class="btn">&#xf00d;</li>`;
+    newcarddisplay.appendChild(div);
 }
