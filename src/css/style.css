@@ -185,4 +185,7 @@ textarea {
     font-weight: 400;
     font-size: 12px;
     padding-left: 10px;
+    background-color: whitesmoke;
+    border-radius: 3px;
+    border: none;
 }

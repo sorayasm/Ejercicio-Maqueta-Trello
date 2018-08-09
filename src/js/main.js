@@ -51,6 +51,10 @@ function addcard() {
         div.innerHTML = `
         <div class="cardtext">
         <p>` + cardtext + `</p>
+        </div>
+        <div id="cardinput">
+        <textarea  id="cardtext" class="form-control" rows="3" placeholder="Introduzca el contenido de la tarjeta..."></textarea>
+        <button id="newlist" class="btn btn-success">Añadir</button>
         </div>`;
         card.appendChild(div);
     }
