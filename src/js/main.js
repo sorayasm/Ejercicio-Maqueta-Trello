@@ -42,8 +42,3 @@ btnAddCard.addEventListener("click", () => {
         document.getElementById("inputcard").value = "";
     }
 });
-
-const btnNewList = document.getElementById("addotherlist");
-btnNewList.addEventListener("click", () => {
-    console.log("boton nueva lista apretado");
-})
