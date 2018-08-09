@@ -19,8 +19,6 @@ btnAddList.addEventListener("click", () => {
         div.innerHTML = `
         <p><h1>` + input + `</h1></p>`;
         titlelist.appendChild(div);
-        //Create new list 
-
     }
 });
 
