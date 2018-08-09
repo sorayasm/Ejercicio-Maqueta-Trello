@@ -16,6 +16,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col">
+                <!-- First Navbar -->
                 <nav class="first">
                     <ul class="nav nav-pills">
                         <li class="btn buttons trello-title"> &#xf181; Tableros</li>
@@ -29,6 +30,7 @@
                         <img src="src/img/person.jpeg" class="rounded-circle photo rigth" alt="">
                     </ul>
                 </nav>
+                <!-- Second Navbar -->
                 <nav class="second">
                     <ul class="nav nav-pills">
                         <li class="btn buttons trello-title">Nombre Trello</li>
@@ -40,20 +42,43 @@
                         <a class="btn buttons ml-auto" href="">... Mostrar Menú</a>
                     </ul>
                 </nav>
+                <!-- Content -->
                 <div class="content">
                     <div class="row">
                         <div class="col">
+                            <!-- First List -->
                             <div class="list">
-                                <div id="list-button">
+                                <!-- Add title List -->
+                                <div id="listbutton">
                                     <ul class="nav nav-pills">
-                                        <li onclick="newlist()" class="btn main"> + Añada una lista</li>
+                                        <li id="newlist" class="btn main"> + Añada una lista</li>
                                     </ul>
                                 </div>
-                                <div id="list-form" class="list-form hide">
-                                    <input id="title" class="form-control" type="text" placeholder="Introduzca el título de la lista...">
-                                    <button id="newlist" class="btn btn-success" onclick="addlist()">Añadir lista</button>
+                                <!-- Write New Title List -->
+                                <div id="listform" class="list-form hide">
+                                    <input id="inputlist" class="form-control" type="text" placeholder="Introduzca el título de la lista...">
+                                    <button id="addlist" class="btn btn-success">Añadir lista</button>
                                 </div>
-                                <div id="newlistdisplay" class="list-form hide"></div>
+                                <!-- New List Display -->
+                                <div id="newlistdisplay" class="list-form hide">
+                                    <div id="card">
+                                        <!-- Title list -->
+                                        <div id="titlelist"> </div>
+                                        <!-- New card Button -->
+                                        <div id="cardbutton">
+                                            <ul class="nav nav-pills">
+                                                <li id="newcard" class="btn buttons main"> + Añada una tarjeta</li>
+                                            </ul>
+                                        </div>
+                                        <!-- New Text card display -->
+                                        <div id="textcard"></div>
+                                        <!-- New Text card input -->
+                                        <div id="cardform" class="hide">
+                                            <textarea id="inputcard" class="form-control" rows="3" placeholder="Introduzca el contenido de la tarjeta..."></textarea>
+                                            <button id="addcard" class="btn btn-success">Añadir</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div id="otherlists">
 

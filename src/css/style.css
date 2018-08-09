@@ -179,7 +179,7 @@ textarea {
     margin: 3px;
 }
 
-.cardtext p {
+#textcard p {
     font-weight: 400;
     font-size: 14px;
     padding-left: 10px;
