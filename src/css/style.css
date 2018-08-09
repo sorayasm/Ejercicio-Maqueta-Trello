@@ -163,8 +163,6 @@ textarea {
 .list {
     width: 250px;
     height: 100%;
-    display: block;
-    position: fixed;
     float: left;
     font-size: 12px;
 }
@@ -183,9 +181,10 @@ textarea {
 
 .cardtext p {
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     padding-left: 10px;
     background-color: whitesmoke;
     border-radius: 3px;
     border: none;
+    line-height: 25px;
 }

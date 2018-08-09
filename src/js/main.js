@@ -6,17 +6,14 @@ function newlist() {
 }
 
 function addlist() {
-    console.log("boton agregar lista apretado");
     let input = document.getElementById("title").value;
     if (input == "") {
         alert("Por favor ingresa un nombre para la lista.")
     } else {
         document.getElementById("list-form").classList.add("hide"); //hide list form
         document.getElementById("newlistdisplay").classList.remove("hide"); // show new list
-        const input = document.getElementById("title").value;
         const div = document.createElement("div");
         div.innerHTML = `
-        <div>
         <p><h1>` + input + `</h1></p>
             <div id="card-button">
                 <ul class="nav nav-pills">
@@ -24,10 +21,27 @@ function addlist() {
                 </ul>
             </div>
             <div id="card"></div>
-        </div>
         `;
         newlistdisplay.appendChild(div);
+        //new list 
+        const newlist = document.createElement("div");
+        newlist.innerHTML = `
+        <div class="list">
+            <div id="list-button">
+                <ul class="nav nav-pills">
+                    <li onclick="newlist()" class="btn main"> + Añada otra lista</li>
+                </ul>
+            </div>
+            <div id="list-form" class="list-form hide">
+                <input id="title" class="form-control" type="text" placeholder="Introduzca el título de la lista...">
+                <button id="newlist" class="btn btn-success>Añadir lista</button>
+            </div>
+            <div id="newlistdisplay" class="list-form hide"></div>
+        </div>`
+        otherlists.appendChild(newlist);
     }
+
+    console.log("boton agregar lista apretado");
 }
 
 function newcardinput() {
@@ -58,4 +72,8 @@ function addcard() {
         </div>`;
         card.appendChild(div);
     }
+}
+
+function addnewlist() {
+
 }
