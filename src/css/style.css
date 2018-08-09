@@ -23,6 +23,10 @@ h1 {
     padding-left: 10px;
 }
 
+textarea {
+    resize: none;
+}
+
 
 /* General Navbars*/
 
@@ -175,4 +179,10 @@ h1 {
 
 .list-form .btn {
     margin: 3px;
+}
+
+.cardtext p {
+    font-weight: 400;
+    font-size: 12px;
+    padding-left: 10px;
 }

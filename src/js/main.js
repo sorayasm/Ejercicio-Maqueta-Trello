@@ -23,7 +23,7 @@ function addlist() {
                     <li onclick="newcardinput()" class="btn buttons main"> + Añada una tarjeta</li>
                 </ul>
             </div>
-            <div id="newcarddisplay"></div>
+            <div id="card"></div>
         </div>
         `;
         newlistdisplay.appendChild(div);
@@ -32,10 +32,26 @@ function addlist() {
 
 function newcardinput() {
     document.getElementById("card-button").classList.add("hide"); //hide card button
-    const div = document.createElement("newcardisplay");
+    const div = document.createElement("card");
     div.innerHTML = `
-    <textarea  id="card" class="form-control" rows="3" placeholder="Introduzca el contenido de la tarjeta..""></textarea>
+    <div id="cardinput">
+    <textarea  id="cardtext" class="form-control" rows="3" placeholder="Introduzca el contenido de la tarjeta..."></textarea>
     <button id="newlist" class="btn btn-success" onclick="addcard()">Añadir</button>
-    <li class="btn">&#xf00d;</li>`;
-    newcarddisplay.appendChild(div);
+    </div>`;
+    card.appendChild(div);
+}
+
+function addcard() {
+    const cardtext = document.getElementById("cardtext").value;
+    if (cardtext == "") {
+        alert("Por favor ingresa un texto para la tarjeta.")
+    } else {
+        document.getElementById("cardinput").classList.add("hide"); //hide card button
+        const div = document.createElement("card");
+        div.innerHTML = `
+        <div class="cardtext">
+        <p>` + cardtext + `</p>
+        </div>`;
+        card.appendChild(div);
+    }
 }
