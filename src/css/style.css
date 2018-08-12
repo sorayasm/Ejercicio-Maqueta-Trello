@@ -30,6 +30,11 @@ textarea {
 
 /* General Navbars*/
 
+.nav {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
 .trello-title {
     font-size: 14px;
     font-weight: 800;
