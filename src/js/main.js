@@ -18,7 +18,7 @@ listbutton.appendChild(ul);
 const li = document.createElement("li");
 li.id = "newlist";
 li.className = "btn main";
-li.innerHTML = " + Añada una lista ...";
+li.textContent = " + Añada una lista ...";
 li.addEventListener("click", newTitle)
 ul.appendChild(li);
 
@@ -41,68 +41,121 @@ function newTitle() {
     const addListbutton = document.createElement("button");
     addListbutton.id = "addlist";
     addListbutton.className = "btn btn-success";
-    addListbutton.innerText = "Añadir lista";
+    addListbutton.textContent = "Añadir lista";
     listformdiv.appendChild(addListbutton);
+
+    // Create Delete List Button
+    const deleteList = document.createElement("li");
+    deleteList.className = "btn buttons delete";
+    listformdiv.appendChild(deleteList);
+
+    const deleteicon = document.createElement("i");
+    deleteicon.className = "fas fa-times";
+    deleteList.appendChild(deleteicon);
+    deleteList.addEventListener("click", eraseList);
+
+    function eraseList() {
+        divList.removeChild(listformdiv);
+    };
 
     addListbutton.addEventListener("click", function() {
         listformdiv.classList.add("hide");
         listDisplay();
     });
-
-
-
-    //Create new list display
-    function listDisplay() {
-        console.log("listDisplay")
-        const listDisplayDiv = document.createElement("div");
-        listDisplayDiv.id = "newlistdisplay";
-        listDisplayDiv.className = "list-form";
-        divList.appendChild(listDisplayDiv);
-
-        let cardDiv = document.createElement("div");
-        cardDiv.id = "titlelist";
-        let input = document.getElementById("inputlist").value;
-        console.log(input);
-        cardDiv.innerHTML = input;
-        listDisplayDiv.appendChild(cardDiv);
-
-        const cardbuttonDiv = document.createElement("div");
-        cardbuttonDiv.id = "cardbutton";
-        listDisplayDiv.appendChild(cardbuttonDiv);
-
-        const ulList = document.createElement("ul");
-        ulList.className = "nav nav-pills";
-        cardbuttonDiv.appendChild(ulList);
-
-        const liList = document.createElement("li");
-        liList.id = "newcard";
-        liList.className = "btn buttons main";
-        liList.innerHTML = "+ Añada una tarjeta";
-        ulList.appendChild(liList);
-    }
 }
 
+//Create new list display
+function listDisplay() {
+    console.log("listDisplay")
 
+    // Create List Display Div
+    const listDisplayDiv = document.createElement("div");
+    listDisplayDiv.id = "newlistdisplay";
+    listDisplayDiv.className = "list-form";
+    divList.appendChild(listDisplayDiv);
 
+    // Create card Div
+    let cardDiv = document.createElement("div");
+    cardDiv.id = "titlelist";
+    let input = document.getElementById("inputlist").value;
+    console.log(input);
+    cardDiv.innerHTML = input;
+    listDisplayDiv.appendChild(cardDiv);
 
-/*
-    // Show card input
-    const btnNewCard = document.getElementById("newcard");
-    btnNewCard.addEventListener("click", () => {
-        document.getElementById("cardbutton").classList.add("hide"); //hide card button
-        document.getElementById("cardform").classList.remove("hide"); //show list form
+    // Create Card Button
+    const cardbuttonDiv = document.createElement("div");
+    cardbuttonDiv.id = "cardbutton";
+    listDisplayDiv.appendChild(cardbuttonDiv);
+
+    const ulList = document.createElement("ul");
+    ulList.className = "nav nav-pills";
+    cardbuttonDiv.appendChild(ulList);
+
+    const liList = document.createElement("li");
+    liList.id = "newcard";
+    liList.className = "btn buttons main";
+    liList.textContent = "+ Añada una tarjeta";
+    ulList.appendChild(liList);
+
+    // Onclick
+    liList.addEventListener("click", function() {
+        // hide Card Button
+        cardbuttonDiv.classList.add("hide");
+        showCardInput();
     });
 
-    // Add card and keep the form
-    const btnAddCard = document.getElementById("addcard");
-    btnAddCard.addEventListener("click", () => {
-        const cardtext = document.getElementById("inputcard").value;
-        if (cardtext == "") {
-            alert("Por favor ingresa un texto para la tarjeta.")
-        } else {
-            const p = document.createElement("p");
-            p.innerHTML = cardtext + ` <li class="btn buttons delete ">&#xf00d;</li>`;
-            textcard.appendChild(p);
-            document.getElementById("inputcard").value = "";
-        }
-    })*/
+    function showCardInput() {
+        //Create text card Div
+        const textcardDiv = document.createElement("div");
+        textcardDiv.id = "textcard";
+        cardDiv.appendChild(textcardDiv)
+
+        // Create New Text card input
+        const cardformDiv = document.createElement("div");
+        cardformDiv.id = "cardform";
+        cardDiv.appendChild(cardformDiv)
+
+        const inputcardArea = document.createElement("textarea");
+        inputcardArea.id = "inputcard";
+        inputcardArea.className = "form-control"
+        inputcardArea.rows = "3"
+        inputcardArea.placeholder = "Introduzca el contenido de la tarjeta...";
+        cardformDiv.appendChild(inputcardArea)
+
+        const addcardButton = document.createElement("button");
+        addcardButton.id = "addcard";
+        addcardButton.className = "btn btn-success";
+        addcardButton.textContent = "Añadir"
+        cardformDiv.appendChild(addcardButton);
+
+        // Onclick
+        addcardButton.addEventListener("click", function() {
+            // Add card and keep the form
+            addCard();
+        });
+
+        function addCard() {
+            const cardtext = document.getElementById("inputcard").value;
+            const pCardtext = document.createElement("p");
+            pCardtext.textContent = cardtext;
+            textcardDiv.appendChild(pCardtext)
+
+            // Create Delete Card Button
+            const deleteCard = document.createElement("li");
+            deleteCard.className = "btn buttons delete";
+            textcardDiv.appendChild(deleteCard);
+
+            const deleteicon = document.createElement("i");
+            deleteicon.className = "fas fa-times";
+            deleteCard.appendChild(deleteicon)
+            deleteCard.addEventListener("click", function() {
+                textcardDiv.removeChild(pCardtext);
+                textcardDiv.removeChild(deleteCard);
+            });
+
+            inputcardArea.value = "";
+
+        };
+
+    };
+};
