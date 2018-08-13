@@ -170,12 +170,13 @@ textarea {
     height: 100%;
     float: left;
     font-size: 12px;
+    margin: 3px;
 }
 
 .list-form {
     background-color: gainsboro;
     margin: 3px;
-    padding: 3px;
+    padding: 6px;
     border-radius: 3px;
     border: none;
 }
@@ -195,14 +196,12 @@ textarea {
     font-weight: 400;
     font-size: 16px;
     padding-left: 10px;
-    padding-top: 15px;
+    padding-top: 5px;
     background-color: whitesmoke;
     border-radius: 3px;
     border: none;
 }
 
 i {
-    padding-right: 15px;
-    padding-bottom: 15px;
-    padding-right: 15px;
+    padding: 0px 15px 15px 15px;
 }

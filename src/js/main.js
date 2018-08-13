@@ -147,7 +147,7 @@ function create() {
                 textcardDiv.appendChild(pCardtext)
 
                 const deleteicon = document.createElement("i");
-                deleteicon.className = "fas fa-times float-right";
+                deleteicon.className = "far fa-times float-right";
                 pCardtext.appendChild(deleteicon)
 
                 deleteicon.addEventListener("click", function() {
