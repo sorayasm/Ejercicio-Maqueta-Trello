@@ -184,12 +184,25 @@ textarea {
     margin: 3px;
 }
 
-#textcard p {
+.titlelist p {
+    font-size: 16px;
+    font-weight: 800;
+    padding-left: 16px;
+    padding-top: 15px;
+}
+
+.textcard p {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
     padding-left: 10px;
+    padding-top: 15px;
     background-color: whitesmoke;
     border-radius: 3px;
     border: none;
-    line-height: 25px;
+}
+
+i {
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-right: 15px;
 }

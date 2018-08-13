@@ -27,7 +27,6 @@ function create() {
 
     //Create Write New Title List 
     function newTitle() {
-        console.log("newTitle")
         listbutton.classList.add("hide");
         const listformdiv = document.createElement("div");
         listformdiv.id = "listform";
@@ -35,8 +34,7 @@ function create() {
         divList.appendChild(listformdiv);
 
         inputlist = document.createElement("input");
-        inputlist.id = ("inputlist");
-        inputlist.className = "form-control";
+        inputlist.className = "form-control inputlist";
         inputlist.type = ("text");
         inputlist.placeholder = "Introduzca el título de la lista...";
         listformdiv.appendChild(inputlist);
@@ -50,14 +48,13 @@ function create() {
         addListbutton.addEventListener("click", function() {
             listformdiv.classList.add("hide");
             listDisplay();
+            inputlist.value = "";
             create();
         });
     }
 
     //Create new list display
     function listDisplay() {
-        console.log("listDisplay")
-
         // Create List Display Div
         const listDisplayDiv = document.createElement("div");
         listDisplayDiv.id = "newlistdisplay";
@@ -80,9 +77,12 @@ function create() {
 
         // Create card Div
         let cardDiv = document.createElement("div");
-        cardDiv.id = "titlelist";
-        let input = document.getElementById("inputlist").value; // REVISAR ESTILOS!!!
-        cardDiv.innerHTML = input;
+        cardDiv.className = "titlelist";
+        let input = document.getElementsByClassName("inputlist");
+        for (var i = 0; i < input.length; i += 1) {
+            inputValue = input[i].value;
+        }
+        cardDiv.innerHTML = "<p>" + inputValue + "</p>";
         listDisplayDiv.appendChild(cardDiv);
 
         // Create Card Button
@@ -110,7 +110,7 @@ function create() {
         function showCardInput() {
             //Create text card Div
             const textcardDiv = document.createElement("div");
-            textcardDiv.id = "textcard";
+            textcardDiv.className = "textcard";
             cardDiv.appendChild(textcardDiv)
 
             // Create New Text card input
@@ -119,8 +119,7 @@ function create() {
             cardDiv.appendChild(cardformDiv)
 
             const inputcardArea = document.createElement("textarea");
-            inputcardArea.id = "inputcard";
-            inputcardArea.className = "form-control"
+            inputcardArea.className = "form-control inputcard";
             inputcardArea.rows = "3"
             inputcardArea.placeholder = "Introduzca el contenido de la tarjeta...";
             cardformDiv.appendChild(inputcardArea)
@@ -138,22 +137,23 @@ function create() {
             });
 
             function addCard() {
-                const cardtext = document.getElementById("inputcard").value;
+                const cardtext = document.getElementsByClassName("inputcard");
+
+                for (var i = 0; i < cardtext.length; i += 1) {
+                    cardtextValue = cardtext[i].value;
+                }
+
+
                 const pCardtext = document.createElement("p");
-                pCardtext.textContent = cardtext;
+                pCardtext.textContent = cardtextValue;
                 textcardDiv.appendChild(pCardtext)
 
-                // Create Delete Card Button
-                const deleteCard = document.createElement("p");
-                deleteCard.className = "btn buttons float-right";
-                textcardDiv.appendChild(deleteCard);
-
                 const deleteicon = document.createElement("i");
-                deleteicon.className = "fas fa-times";
-                deleteCard.appendChild(deleteicon)
-                deleteCard.addEventListener("click", function() {
+                deleteicon.className = "fas fa-times float-right";
+                pCardtext.appendChild(deleteicon)
+
+                deleteicon.addEventListener("click", function() {
                     textcardDiv.removeChild(pCardtext);
-                    textcardDiv.removeChild(deleteCard);
                 });
 
                 inputcardArea.value = "";
