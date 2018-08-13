@@ -67,12 +67,12 @@ function create() {
         listDisplayDiv.appendChild(deleteList);
 
         const deleteicon = document.createElement("i");
-        deleteicon.className = "fas fa-times";
+        deleteicon.textContent = "...";
         deleteList.appendChild(deleteicon);
         deleteList.addEventListener("click", eraseList);
 
         function eraseList() {
-            divList.removeChild(listDisplayDiv);
+            container.removeChild(divList);
         };
 
         // Create card Div
@@ -147,7 +147,7 @@ function create() {
                 textcardDiv.appendChild(pCardtext)
 
                 const deleteicon = document.createElement("i");
-                deleteicon.className = "far fa-times float-right";
+                deleteicon.className = "fa fa-close float-right";
                 pCardtext.appendChild(deleteicon)
 
                 deleteicon.addEventListener("click", function() {
