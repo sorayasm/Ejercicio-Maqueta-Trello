@@ -138,11 +138,9 @@ function create() {
 
             function addCard() {
                 const cardtext = document.getElementsByClassName("inputcard");
-
                 for (var i = 0; i < cardtext.length; i += 1) {
                     cardtextValue = cardtext[i].value;
                 }
-
 
                 const pCardtext = document.createElement("p");
                 pCardtext.textContent = cardtextValue;
